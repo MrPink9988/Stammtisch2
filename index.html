@@ -9,23 +9,31 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="nav-left"><a href="#employers">Arbeitgeber</a></div>
+    <div class="nav-left">
+      <a href="#employers">Arbeitgeber</a>
+    </div>
     <img src="images/logo.png" alt="Logo" />
-    <div class="nav-right"><a href="#applicants">Bewerber</a></div>
+    <div class="nav-right">
+      <a href="#applicants">Bewerber</a>
+    </div>
   </nav>
 
   <div class="carousel-container">
-    <img src="images/chef.png" class="slide active" alt="Koch" />
+    <img src="images/chef.png" class="slide active" alt="Koch in Restaurantküche" />
     <img src="images/service.png" class="slide" alt="Servicekraft" />
-    <img src="images/restaurantmanager.png" class="slide" alt="Manager" />
-    <img src="images/barkeeper.png" class="slide" alt="Barkeeperin" />
+    <img src="images/restaurantmanger.png" class="slide" alt="Restaurantmanager" />
+    <img src="images/barkeeper.png" class="slide" alt="Barkeeperin in der Bar" />
 
     <div class="carousel-overlay"></div>
 
     <div class="hero-overlay">
       <div class="title-main">STAMMTISCH</div>
       <div class="title-sub">PERSONALMAKLER</div>
-      <p>Lirum larum Löffelstiel<br>wir vermitteln mit Gefühl und Stil.<br>Vertrauensvoll. Persönlich. Direkt.</p>
+      <p>
+        Lirum larum Löffelstiel<br>
+        wir vermitteln mit Gefühl und Stil.<br>
+        Vertrauensvoll. Persönlich. Direkt.
+      </p>
       <div class="hero-buttons">
         <button>Mitarbeiter finden</button>
         <button>Jetzt bewerben</button>
@@ -33,7 +41,43 @@
     </div>
   </div>
 
-  <!-- Weitere Abschnitte hier ... z. B. Über uns, Arbeitgeber, Bewerber, Beraterin -->
+  <section class="highlight-section" id="about">
+    <h2>Über uns / Unsere Haltung</h2>
+    <p>
+      Stammtisch steht für persönliche Vermittlung auf Augenhöhe. Keine Zeitarbeit, kein Versprechen ohne Substanz – nur ehrliches Matching zwischen Gastronom und Gastronom. Lernen Sie <a href="#advisor">hier</a> unsere Berater kennen.
+    </p>
+  </section>
+
+  <section class="split-section">
+    <div class="split" id="employers">
+      <h2>Für Arbeitgeber</h2>
+      <p>Sie zahlen nur bei erfolgreicher Vermittlung. Kein Risiko. Kein Leasingvertrag.</p>
+      <ul>
+        <li>Vorauswahl & persönliche Betreuung</li>
+        <li>Nur qualifizierte Bewerber</li>
+        <li>Vermittlung in Festanstellung</li>
+      </ul>
+      <div class="split-buttons">
+        <button>Erstkontakt aufnehmen</button>
+      </div>
+    </div>
+
+    <div class="split" id="applicants">
+      <h2>Für Bewerber</h2>
+      <p>Arbeiten, wo du hingehörst – Du bewirbst dich bei uns, wir kümmern uns persönlich. Keine Massenvermittlung. Kein Systemdruck.</p>
+      <div class="split-buttons">
+        <button>Initiativbewerbung senden</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight-section" id="advisor">
+    <div class="advisor">
+      <h2>Unsere Beraterin</h2>
+      <img src="images/partner_manager.png" alt="Maria López" />
+      <h3>Maria López</h3>
+    </div>
+  </section>
 
   <script src="js/carousel.js"></script>
 </body>
