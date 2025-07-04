@@ -235,6 +235,27 @@ section {
   margin-bottom: 1rem;
 }
 
+.site-footer {
+  background-color: var(--color-text);
+  color: var(--bg-main);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: 'Lora', serif;
+  margin-top: 4rem;
+}
+
+.site-footer a {
+  color: var(--bg-main);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.site-footer a:hover {
+  color: var(--color-gold);
+}
+
+
 .advisor h3 {
   font-size: 1.25rem;
 }
