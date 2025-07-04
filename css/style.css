@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap');
 
 :root {
@@ -19,10 +18,19 @@
 
 body {
   font-family: 'Lora', serif;
-  background-color: var(--bg-main);
+  background-color: var(--bg-main); /* Seitenränder */
   color: var(--color-text);
   line-height: 1.6;
   padding-bottom: 4rem;
+}
+
+.page-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
 }
 
 h1, h2, h3, .title-main {
@@ -235,6 +243,10 @@ section {
   margin-bottom: 1rem;
 }
 
+.advisor h3 {
+  font-size: 1.25rem;
+}
+
 .site-footer {
   background-color: var(--color-text);
   color: var(--bg-main);
@@ -253,9 +265,4 @@ section {
 
 .site-footer a:hover {
   color: var(--color-gold);
-}
-
-
-.advisor h3 {
-  font-size: 1.25rem;
 }
