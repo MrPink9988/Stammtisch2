@@ -87,7 +87,7 @@
       </div>
     </section>
 
-    <!-- NEUER RECHNER ABSCHNITT -->
+    <!-- RECHNER SEKTION -->
     <section class="highlight-section" id="rechner">
       <div class="inner-wrapper">
         <h2>Was kostet es, Personal unbesetzt zu lassen?</h2>
@@ -123,7 +123,7 @@
           </div>
         </form>
 
-        <div id="result-box" class="split" style="display:none; margin-top: 2rem;">
+        <div id="result-box" class="split fade-in" style="display:none; margin-top: 2rem;">
           <h3>Ergebnis:</h3>
           <p id="results"></p>
         </div>
@@ -173,18 +173,29 @@
       const savings = lostWithOwn - lostWithUs;
       const netBenefit = savings - fee;
 
-      document.getElementById("result-box").style.display = "block";
-      document.getElementById("results").innerHTML = `
-        <strong>Ohne Unterstützung:</strong> ${lostWithOwn.toFixed(2)} € Umsatzverlust<br>
-        <strong>Mit schneller Besetzung:</strong> ${lostWithUs.toFixed(2)} € Verlust<br><br>
-        <strong>Sie vermeiden ${savings.toFixed(2)} € an Verlusten,<br>
-        zahlen ${fee.toFixed(2)} € Gebühr – und<br>
-        verbessern Ihr Ergebnis um:</strong><br><br>
-        <span style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent);">
-          ${netBenefit.toFixed(2)} €
-        </span>
-      `;
+      const box = document.getElementById("result-box");
+      box.style.display = "block";
 
+      // Fade-in aktivieren
+      setTimeout(() => {
+        box.classList.add("visible");
+      }, 50);
+
+      document.getElementById("results").innerHTML = `
+        <p style="font-size: 1.05rem; line-height: 1.6;">
+          Wenn in Ihrem Betrieb eine Stelle <strong>${ownDays}</strong> Tage unbesetzt bleibt, 
+          entgehen Ihnen – bei einem moderaten Tagesumsatz – rund <strong>${lostWithOwn.toFixed(2)} €</strong>.
+          <br><br>
+          Mit unserer Unterstützung gelingt die Besetzung in der Regel innerhalb von <strong>${ourDays}</strong> Tagen. 
+          Das reduziert den wirtschaftlichen Schaden auf etwa <strong>${lostWithUs.toFixed(2)} €</strong>. 
+          Unsere Vermittlungsgebühr liegt bei <strong>${fee.toFixed(2)} €</strong>.
+          <br><br>
+          Der Unterschied: ein wirtschaftlicher Vorteil von über <strong style="color: var(--color-accent); font-size: 1.3rem;">${netBenefit.toFixed(2)} €</strong> – 
+          und das ganz ohne zusätzliche Belastung für Ihr Team.
+          <br><br>
+          <em>Wer schneller besetzt, verliert weniger – und gewinnt mehr Handlungsfreiheit.</em>
+        </p>
+      `;
     }
   </script>
 
