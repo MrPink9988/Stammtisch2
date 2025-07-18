@@ -135,8 +135,8 @@
           </ul>
           <em>Natürlich können Sie Ihre eigenen Werte eintragen – der Rechner passt sich automatisch an.</em>
         </div>
-   
-         <div id="result-box" class="split fade-in" style="display:none; margin-top: 2rem;">
+
+        <div id="result-box" class="split fade-in scroll-target" style="display:none; margin-top: 2rem;">
           <h3>Ergebnis:</h3>
           <p id="results"></p>
         </div>
@@ -170,47 +170,53 @@
         });
       }
     });
-  </script>
 
-  <!-- SCRIPT FÜR DEN RECHNER -->
+  // script für den Rechner  
   <script>
-    function calculateCost() {
-      const revenuePerDay = parseFloat(document.getElementById("revenuePerDay").value);
-      const marginPercent = parseFloat(document.getElementById("marginPercent").value) / 100;
-      const ownDays = parseFloat(document.getElementById("ownDays").value);
-      const ourDays = parseFloat(document.getElementById("ourDays").value);
-      const fee = parseFloat(document.getElementById("fee").value);
+  function calculateCost() {
+    const revenuePerDay = parseFloat(document.getElementById("revenuePerDay").value);
+    const marginPercent = parseFloat(document.getElementById("marginPercent").value) / 100;
+    const ownDays = parseFloat(document.getElementById("ownDays").value);
+    const ourDays = parseFloat(document.getElementById("ourDays").value);
+    const fee = parseFloat(document.getElementById("fee").value);
 
-      const lostWithOwn = revenuePerDay * marginPercent * ownDays;
-      const lostWithUs = revenuePerDay * marginPercent * ourDays;
-      const savings = lostWithOwn - lostWithUs;
-      const netBenefit = savings - fee;
+    const lostWithOwn = revenuePerDay * marginPercent * ownDays;
+    const lostWithUs = revenuePerDay * marginPercent * ourDays;
+    const savings = lostWithOwn - lostWithUs;
+    const netBenefit = savings - fee;
 
-      const box = document.getElementById("result-box");
-      box.style.display = "block";
+    const box = document.getElementById("result-box");
+    box.style.display = "block";
 
-      // Fade-in aktivieren
-      setTimeout(() => {
-        box.classList.add("visible");
-      }, 50);
+    // Warte kurz, dann Fade-in UND Scroll starten
+    setTimeout(() => {
+      box.classList.add("visible");
 
-      document.getElementById("results").innerHTML = `
-        <p style="font-size: 1.05rem; line-height: 1.6;">
-          Wenn in Ihrem Betrieb eine Stelle <strong>${ownDays}</strong> Tage unbesetzt bleibt, 
-          entgehen Ihnen – bei einem moderaten Tagesumsatz – rund <strong>${lostWithOwn.toFixed(2)} €</strong>.
-          <br><br>
-          Mit unserer Unterstützung gelingt die Besetzung in der Regel innerhalb von <strong>${ourDays}</strong> Tagen. 
-          Das reduziert den wirtschaftlichen Schaden auf etwa <strong>${lostWithUs.toFixed(2)} €</strong>. 
-          Unsere Vermittlungsgebühr liegt bei <strong>${fee.toFixed(2)} €</strong>.
-          <br><br>
-          Der Unterschied: ein wirtschaftlicher Vorteil von über <strong style="color: var(--color-accent); font-size: 1.3rem;">${netBenefit.toFixed(2)} €</strong> – 
-          und das ganz ohne zusätzliche Belastung für Ihr Team.
-          <br><br>
-          <em>Wer schneller besetzt, verliert weniger – und gewinnt mehr Handlungsfreiheit.</em>
-        </p>
-      `;
-    }
-  </script>
+      // Scroll zum Ergebnis
+      box.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 50);
+
+    document.getElementById("results").innerHTML = `
+      <p style="font-size: 1.05rem; line-height: 1.6;">
+        Wenn in Ihrem Betrieb eine Stelle <strong>${ownDays}</strong> Tage unbesetzt bleibt, 
+        entgehen Ihnen – bei einem moderaten Tagesumsatz – rund <strong>${lostWithOwn.toFixed(2)} €</strong>.
+        <br><br>
+        Mit unserer Unterstützung gelingt die Besetzung in der Regel innerhalb von <strong>${ourDays}</strong> Tagen. 
+        Das reduziert den wirtschaftlichen Schaden auf etwa <strong>${lostWithUs.toFixed(2)} €</strong>. 
+        Unsere Vermittlungsgebühr liegt bei <strong>${fee.toFixed(2)} €</strong>.
+        <br><br>
+        Der Unterschied: ein wirtschaftlicher Vorteil von über <strong style="color: var(--color-accent); font-size: 1.3rem;">${netBenefit.toFixed(2)} €</strong> – 
+        und das ganz ohne zusätzliche Belastung für Ihr Team.
+        <br><br>
+        <em>Wer schneller besetzt, verliert weniger – und gewinnt mehr Handlungsfreiheit.</em>
+      </p>
+    `;
+  }
+</script>
+
 
 </body>
 </html>
