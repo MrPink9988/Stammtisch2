@@ -175,12 +175,16 @@
 
       document.getElementById("result-box").style.display = "block";
       document.getElementById("results").innerHTML = `
-        <strong>Verlust bei Eigensuche:</strong> ${lostWithOwn.toFixed(2)} €<br>
-        <strong>Verlust mit unserer Hilfe:</strong> ${lostWithUs.toFixed(2)} €<br>
-        <strong>Ersparnis durch schnellere Besetzung:</strong> ${savings.toFixed(2)} €<br>
-        <strong>Abzüglich unserer Gebühr:</strong> ${fee.toFixed(2)} €<br><br>
-        <strong style="font-size: 1.2rem; color: var(--color-accent);">Netto-Vorteil für Sie: ${netBenefit.toFixed(2)} €</strong>
+        <strong>Ohne Unterstützung:</strong> ${lostWithOwn.toFixed(2)} € Umsatzverlust<br>
+        <strong>Mit schneller Besetzung:</strong> ${lostWithUs.toFixed(2)} € Verlust<br><br>
+        <strong>Sie vermeiden ${savings.toFixed(2)} € an Verlusten,<br>
+        zahlen ${fee.toFixed(2)} € Gebühr – und<br>
+        verbessern Ihr Ergebnis um:</strong><br><br>
+        <span style="font-size: 1.5rem; font-weight: bold; color: var(--color-accent);">
+          ${netBenefit.toFixed(2)} €
+        </span>
       `;
+
     }
   </script>
 
